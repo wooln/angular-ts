@@ -1,5 +1,7 @@
-var gulp = require('gulp');
-var browserSync = require('browser-sync').create();
+const gulp = require('gulp');
+const browserSync = require('browser-sync').create();
+const ts = require("gulp-typescript");
+const tsProject = ts.createProject("tsconfig.json");
 
 // 静态服务器
 gulp.task('dev', function() {
@@ -11,4 +13,10 @@ gulp.task('dev', function() {
     });
 
     gulp.watch("src/**/*").on('change', browserSync.reload);
+});
+
+gulp.task("default", function() {
+    return tsProject.src()
+        .pipe(tsProject())
+        .js.pipe(gulp.dest("dist"));
 });
