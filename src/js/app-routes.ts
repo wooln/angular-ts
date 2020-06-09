@@ -1,7 +1,5 @@
-define('app-routes', [
-    'require',
-    'app'
-], function(require, app) {
+import { app } from './app'
+
     app.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider) {
 
         //默认跳转首页
@@ -16,4 +14,3 @@ define('app-routes', [
             dependencies: []
         });
     }]);
-});
