@@ -1,4 +1,4 @@
-import {subTowValues} from './sub'
+import {subTowValues} from './sub-js'
 import {otherFun} from './other'
 
 export function addTowValues(x: number, y :number): number {

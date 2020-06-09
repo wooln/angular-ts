@@ -1,22 +1,40 @@
-const gulp = require('gulp');
-const browserSync = require('browser-sync').create();
-const ts = require("gulp-typescript");
-const tsProject = ts.createProject("tsconfig.json");
+var gulp = require('gulp');
+var del = require('del');
+var browserSync = require('browser-sync').create();
+var ts = require("gulp-typescript");
+var tsProject = ts.createProject("tsconfig.json");
+var gulpSequence = require('gulp-sequence');
 
-// 静态服务器
-gulp.task('dev', function() {
-    browserSync.init({
-        server: {
-            baseDir: "./",
-            index: "src/default"
-        }
-    });
 
-    gulp.watch("src/**/*").on('change', browserSync.reload);
-});
+function clean() {
+    return del(['dist']);
+}
 
-gulp.task("default", function() {
+function htmlRelease() {  
+    return gulp.src(['./src/*.html','./src/**/*.html', './src/**/*.js','./src/*.js'])        
+        .pipe(gulp.dest('dist'));
+}
+
+function tsRelease() {
     return tsProject.src()
         .pipe(tsProject())
-        .js.pipe(gulp.dest("src"));
-});
+        .js.pipe(gulp.dest("dist"));
+}
+
+function dev() {
+    browserSync.init({
+        server: {
+            baseDir: "./"
+        }
+    });
+    gulp.watch("dist/**/*").on('change', browserSync.reload);
+}
+
+var build = gulp.series(clean, gulp.parallel(htmlRelease, tsRelease)); 
+
+exports.clean = clean;
+exports.htmlRelease = htmlRelease;
+exports.tsRelease = tsRelease;
+exports.dev = dev;
+exports.build = build;
+exports.default = build;

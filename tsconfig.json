@@ -5,7 +5,6 @@
 
     ],
     "compilerOptions": {
-
         "target":"ES5",
         "module": "AMD",
         "allowJs": true
