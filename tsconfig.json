@@ -2,7 +2,6 @@
     "files": [
         "src/*.ts",
         "src/**/*.ts",
-
     ],
     "compilerOptions": {
         "target":"ES5",

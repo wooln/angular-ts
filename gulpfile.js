@@ -8,9 +8,14 @@ function clean() {
     return del(['dist']);
 }
 
-function htmlRelease() {  
-    return gulp.src(['./src/*.html','./src/**/*.html', './src/**/*.js','./src/*.js'])        
+function htmlRelease() {
+    return gulp.src(['./src/*.html', './src/**/*.html', './src/**/*.js', './src/*.js'])
         .pipe(gulp.dest('dist'));
+}
+
+function tsDefineCopy() {
+    return gulp.src(['node/**/*.ts'])
+        .pipe(gulp.dest('node_modules/@types'));
 }
 
 function tsRelease() {
@@ -28,7 +33,7 @@ function dev() {
     gulp.watch("dist/**/*").on('change', browserSync.reload);
 }
 
-var build = gulp.series(clean, gulp.series(htmlRelease, tsRelease)); //parallel
+var build = gulp.series(clean, htmlRelease, tsDefineCopy, tsRelease); //parallel
 
 exports.clean = clean;
 exports.htmlRelease = htmlRelease;

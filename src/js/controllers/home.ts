@@ -1,5 +1,6 @@
 import { app } from '../app';
-import * as ng from 'angular';
+import * as angular from 'angular';
+const ng = angular;
 
 app.controller('home_controller', [
     '$scope',
@@ -13,19 +14,15 @@ app.controller('home_controller', [
         $scope.title = 10;
         $scope.onClick = function () {
             $scope.title += 10;
+            myFun();
         };
-
-        let promise = $http.get('./home.html');
-        promise.then(function (response) {
-            window.alert(ng.toJson(response.data));
-        });
 
         let myFun = function () {
             console.log('myFun');
+            let promise = $http.get('./views/home.html');
+            promise.then(function (response) {
+                console.log(angular.toJson(response.data));
+            });
         };
-
-        $timeout(1000, false);
-        $timeout(1000, true);
         $timeout(myFun, 1000, true);
     }]);
-
