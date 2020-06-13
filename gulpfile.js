@@ -3,8 +3,6 @@ var del = require('del');
 var browserSync = require('browser-sync').create();
 var ts = require("gulp-typescript");
 var tsProject = ts.createProject("tsconfig.json");
-var gulpSequence = require('gulp-sequence');
-
 
 function clean() {
     return del(['dist']);
@@ -30,7 +28,7 @@ function dev() {
     gulp.watch("dist/**/*").on('change', browserSync.reload);
 }
 
-var build = gulp.series(clean, gulp.parallel(htmlRelease, tsRelease)); 
+var build = gulp.series(clean, gulp.series(htmlRelease, tsRelease)); //parallel
 
 exports.clean = clean;
 exports.htmlRelease = htmlRelease;

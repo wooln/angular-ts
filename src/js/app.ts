@@ -1,10 +1,16 @@
-import { angular } from '../../node_modules/angular/angular'
-// import { asyncLoader } from '../../node_modules/angular-async-loader/angular-async-loader'
-// import { uiRouter } from '../../node_modules/angular-ui-router/release/angular-ui-router'
+import * as angular from "angular";
+import * as  asyncLoader from "angular-async-loader"
+import * as uiRouter from 'angular-ui-router'
 
 var app = angular.module('app', [
     'ui.router'
 ]);
-// asyncLoader.configure(app);
+// app.config(['configureProvider', function(configureProvider: any) {
+//     configureProvider.configure(commonConfig);
+//     configureProvider.configure(config);    
+// }]);
+asyncLoader.configure(app);
 
-exports.app = app;
+console.log(uiRouter);
+
+export { app };
