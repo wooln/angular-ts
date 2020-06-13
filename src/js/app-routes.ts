@@ -1,4 +1,5 @@
 import { app } from './app'
+import 'angular-ui-router'
 
 app.config(['$stateProvider', '$urlRouterProvider', function ($stateProvider: any, $urlRouterProvider: any) {
 

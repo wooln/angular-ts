@@ -1,0 +1,45 @@
+{
+    "seagull2Url": {
+        "platformUrlBase": "/THRWebApi/wfapi"
+    },
+    "oAuth": {
+        "client_id": "MyWfAppName"
+    },
+    "uploader": {
+        "serviceBaseUrl": "/THRWebApi/wfapi/File",
+        "swfUrl": "https://workflow.sinooceangroup.com/libs/webuploader/0.1.8/dist/Uploader.swf"
+    },
+    "ueditor": {
+        "serviceBaseUrl": "/THRWebApi/wfapi/",
+        "ueditorHomeUrl": "/libs/ueditor-branch-seagull2/beta/"
+    },
+    "wfToolbar": {
+        "closeMode": "notice",
+        "closeMode_options": "notice/dialog",
+        "autoCloseTime": 0,
+        "autoClosePageLink": "https://workflow-dev.sinoocean-test.com/THRWebApp/oaportal/",
+        "oaCommonPagesBaseUrl": "https://workflow-dev.sinoocean-test.com/MCSWebApp/OACommonPages"
+    },
+    "ogu": {
+        "selectorUrl": "/THRWebApi/wfapi/Organization/LoadChildren",
+        "searchUrl": "/THRWebApi/wfapi/organization/search",
+        "sipUrl": "/THRWebApi/wfapi/organization/loadUsersSip",
+        "userInfoUrl": "/THRWebApi/wfapi/organization/loadUsersContactInfo",
+        "currentUserInfoUrl": "/THRWebApi/wfapi/organization/GetUserInfo",
+        "userPhotoUrl": "/THRWebApi/wfapi/organization/GetUserPhoto"
+    },
+    "customerConfig": {
+        "customerInfo": [{
+            "applicationName": "平台Example"
+        }]
+    },
+    "errorPageCustomer": {
+        "subject": "客服主题",
+        "customerMail": "xxx@seagull2.cn",
+        "customerPhone": "13888887777"
+    },
+    "bridge": {
+        "enableFormBridge": true,
+        "enableMockWebViewBridge": false
+    }
+}

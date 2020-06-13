@@ -1,0 +1,39 @@
+{
+    "common": {
+        "apiUrlBase": "http://localhost:10086",
+        "webUrlBase": "http://localhost:9555"
+    },
+    "exception": {
+        "mode": "notice",
+        "mode_options": "ignore/page/dialog/notice"
+    },
+    "errorPageCustomer": {
+        "subject": "系统问题反馈",
+        "customerMail": "zhangqf@sinooceanland.cn"
+    },
+    "oAuth": {
+        "oAuthUrl": "https://workflow-dev.sinoocean-test.com/THRWebApp/passport.htm#/oauth-authorize",
+        "logoutUrl": "https://workflow-dev.sinoocean-test.com/THRWebApp/passport.htm#/logout"
+    },
+    "infrastUriHelper": {
+        "regionSelectorUrl": "https://workflow-dev.sinoocean-test.com/THRWebApi/CommonDb/Region/LoadChildren",
+        "regionSearchUrl": "https://workflow-dev.sinoocean-test.com/THRWebApi/CommonDb/Region/Search",
+        "industrySelectorUrl": "https://workflow-dev.sinoocean-test.com/THRWebApi/CommonDb/Industry/LoadChildren",
+        "industrySearchUrl": "https://workflow-dev.sinoocean-test.com/THRWebApi/CommonDb/Industry/Search"
+    },
+    "customerConfig": {
+        "customerUrl": "https://workflow-dev.sinoocean-test.com/THRWebApi/Platform/Assistant/LoadAssistants",
+        "customerMode": "qiyu",
+        "customerMode_options": "lync,qiyu",
+        "qiyukfId": "975963ad3caf0591c33a21361640ce04",
+        "qiyukfReadyEventName": "onready",
+        "qiyukfIdReadyEventName_options": "onLayerload,onready",
+        "qiyuFuncName": "ysf",
+        "qiyukfAutoInitDelay": 200,
+        "qiyukfDefaultHidden": false,
+        "qiyukAlertNewMsg": false,
+        "selfApiTimeOut": 10000,
+        "forceShowCustomerLink": false,
+        "alwaysSendLyncUsersInWebViewBridge": true
+    }
+}

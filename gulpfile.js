@@ -8,8 +8,8 @@ function clean() {
     return del(['dist']);
 }
 
-function htmlRelease() {
-    return gulp.src(['./src/*.html', './src/**/*.html', './src/**/*.js', './src/*.js'])
+function staticResourceRelease() {
+    return gulp.src(['./src/*.html', './src/**/*.html', './src/**/*.js', './src/*.js', './src/*.json'])
         .pipe(gulp.dest('dist'));
 }
 
@@ -33,10 +33,10 @@ function dev() {
     gulp.watch("dist/**/*").on('change', browserSync.reload);
 }
 
-var build = gulp.series(clean, htmlRelease, tsDefineCopy, tsRelease); //parallel
+var build = gulp.series(clean, staticResourceRelease, tsDefineCopy, tsRelease); //parallel
 
 exports.clean = clean;
-exports.htmlRelease = htmlRelease;
+exports.staticResourceRelease = staticResourceRelease;
 exports.tsRelease = tsRelease;
 exports.dev = dev;
 exports.build = build;
