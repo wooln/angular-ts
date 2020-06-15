@@ -14,7 +14,7 @@ function staticResourceRelease() {
 }
 
 function tsDefineCopy() {
-    return gulp.src(['node/**/*.ts'])
+    return gulp.src(['@types/**/*.ts'])
         .pipe(gulp.dest('node_modules/@types'));
 }
 

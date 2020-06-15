@@ -14,7 +14,7 @@ import 'text!common-config.json';
 import 'text!config.json';
 
 //使用../app和./app会导致分别调用到这里，这么写防止被覆盖, TODO想办法修正
-let app = window['_app'];
+let app: ng.IModule = window['_app'];
 if (!app) {
     app = angular.module('app', [
         'ui.router',
